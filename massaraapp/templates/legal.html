@@ -1,0 +1,428 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Massarahouse</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.css'%}">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+<link rel="stylesheet" href="{% static 'css/aos.css'%}">
+<link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css'%}">
+<link rel="stylesheet" href="{% static 'css/jquery.timepicker.css'%}">
+  <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+
+  <link href="
+https://cdn.jsdelivr.net/npm/icofont@1.0.0/dist/icofont.min.css
+" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <img  src="{% static 'images/favicon.png'%}"style="width:100px">
+      
+      <a class="navbar-brand" style="color:black">Massara<span style="color:#FEA116">House</span>
+  </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+      </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item "><a href="/" class="nav-link">HOME</a></li>
+        <li class="nav-item"><a href="/rooms" class="nav-link">ROOMS</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICES</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+          <!-- Dropdown items -->
+          <a class="dropdown-item" href="/cafe">Cafe</a>
+          <a class="dropdown-item" href="/restaurant">Restaurants</a>
+          <a class="dropdown-item" href="/gym">Fitness Center</a>
+          <a class="dropdown-item" href="/swimming">Swimming Pools</a>
+        </div>
+      </li>
+       
+        <li class="nav-item"><a href="/blog" class="nav-link">BLOG</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link">CONTACT</a></li>
+    <li class="nav-item"><a href="/about" class="nav-link">ABOUT</a></li>
+        <li class="nav-item"><a href="/legal" class="nav-link">LEGAL</a></li>
+    
+      {% if user.is_authenticated %}
+      <!-- User is logged in, show logout button -->
+      <li class="nav-item"><a href="{% url 'customer_logout' %}" class="nav-link">LOGOUT</a></li>
+      {% else %}
+      <!-- User is not logged in, show login and register buttons -->
+      <li class="nav-item"><a href="{% url 'customer_login' %}" class="nav-link">LOGIN</a></li>
+      <li class="nav-item"><a href="{% url 'customer_registration' %}" class="nav-link">REGISTER</a></li>
+      {% endif %}
+      </ul>
+    </div>
+    
+    </div>
+    </nav>
+  <!-- END nav -->
+  <div class="hero-wrap" style="background-image: url({% static '/images/legal.png' %})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
+          <div class="text">
+            <p style="padding-left:700px;"><span>Home</span> <span>Legal</span></p>
+            <h1 class="mb-4 bread" style="color: black;padding-left:700px;padding-bottom:200px">Legal</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section>
+    <div class="container">
+      <hr style="background-color:blue;">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title">
+            <h2 style="display: flex; justify-content: center;">Legal Terms</h2>
+            <p>By using the services, facilities, or website of MassaraHouse Luxury Hotel, you acknowledge that you have
+              read, understood, and agreed to these terms and conditions, as well as the Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+
+
+            <h4><i class="icofont icofont-globe"></i><a href="#"> Jurisdiction</a></h4>
+            <p> These terms and conditions are governed by the laws of Saudi Arabia, without regard to its conflict of
+              law principles.</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+
+            <h4><i class="icofont icofont-gavel"></i><a href="#"> Dispute Resolution</a></h4>
+            <p>Any disputes arising out of or related to these terms and conditions shall be resolved through
+              arbitration in accordance with the rules of the Saudi Center for Commercial Arbitration (SCCA), and the
+              decision of the arbitrator shall be final and binding.</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+
+            <h4><i class="icofont icofont-shield"></i><a href="#"> Limitation of Liability</a></h4>
+            <p>To the extent permitted by applicable law, MassaraHouse Luxury Hotel shall not be liable for any
+              indirect, incidental, special, or consequential damages arising out of or related to your use of our
+              services, facilities, or website.</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+
+            <h4><i class="icofont icofont-legal"></i><a href="#"> Severability</a></h4>
+            <p> If any provision of these terms and conditions is found to be invalid or unenforceable, such provision
+              shall be severed, and the remaining provisions shall remain in full force and effect.</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+
+      </div>
+      <hr style="background-color:blue;">
+    </div>
+  </section>
+
+
+  <section class="pf-details section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="inner-content">
+            <h3 style="display: flex;"></h3>
+            <div class="body-text">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mission2-section">
+                      <h3 style="display: flex;	justify-content: center;">MassaraHouse Luxury Hotel - Terms and
+                        Conditions</h3>
+
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>Introduction
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Welcome to MassaraHouse Luxury Hotel. By accessing and using our services, facilities, and
+                        website, you agree to comply with and be bound by the following terms and conditions. Please
+                        read these terms carefully before making a reservation or using any of our services. </p>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mission2-section">
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>Reservations and
+                        Payments</h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> All reservations must be
+                        guaranteed with a valid credit card or other acceptable payment methods.
+                        <br><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Reservation policies,
+                        cancellation policies, and payment terms may vary based on the specific package or offer.
+                        <br><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Any additional charges
+                        incurred during the stay, such as minibar consumption, will be billed upon check-out.
+
+                      </p>
+                      <br>
+                      <br>
+
+                    </div>
+
+                    <div class="mission2-section">
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>Facilities</h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Gym Workout: Guests using the gym facilities must adhere to all safety guidelines and equipment usage instructions. MassaraHouse is not liable for any injuries sustained while using the gym facilities.
+                        <br><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Meeting Facilities: Reservations for meeting rooms must be made in advance. Any additional requirements should be communicated beforehand.
+                        <br><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Laundry Services: Laundry services are available at an additional charge. MassaraHouse is not responsible for any damage to clothing items during the laundering process.
+
+                      </p>
+                      <br>
+                      <br>
+                    </div>
+
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>Liability
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i>  MassaraHouse Luxury Hotel is not liable for any loss, damage, or theft of personal belongings during your stay. Guests are advised to use the in-room safe for securing valuables. </p>
+                    </div>
+
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i> Privacy Policy
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i>  Your privacy is important to us. Our Privacy Policy outlines how we collect, use, and protect your personal information. By using our services, you consent to the collection and use of your information as described in the Privacy Policy. </p>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+              <hr style="background-color:blue;">
+
+              <br>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <section class="pf-details section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="inner-content">
+            <h3 style="display: flex;"></h3>
+            <div class="body-text">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mission2-section">
+                      <h3 style="display: flex;	justify-content: center;">MassaraHouse Luxury Hotel - Privacy Policy
+                        </h3>
+
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>Introduction
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> At MassaraHouse Luxury Hotel, we are committed to protecting your privacy. This Privacy Policy describes how we collect, use, and safeguard your personal information. </p>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mission2-section">
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i> Information We Collect</h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> We may collect personal information such as your name, contact details, payment information, and preferences when you make a reservation or use our services. We also collect information automatically through cookies and other tracking technologies when you visit our website.
+                       
+                      </p>
+                      <br>
+                      <br>
+
+                    </div>
+
+                    <div class="mission2-section">
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>Use of Information We use your information to:</h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i>Process reservations and payments
+                        <br><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Provide personalized services
+                        <br><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Improve our services and facilities
+                        <br><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> Communicate with you about promotions, offers, and events
+                      </p>
+                      <br>
+                      <br>
+                    </div>
+
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>  Sharing of Information
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i> We do not sell, trade, or rent your personal information to third parties. However, we may share your information with trusted service providers who assist us in operating our website, conducting business, or servicing you. </p>
+                    </div>
+
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i> Security
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i>   We implement appropriate security measures to protect your information from unauthorized access, alteration, or disclosure. </p>
+                    </div>
+
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i> Changes to this Privacy Policy
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i>  We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. We will notify you of any significant changes and obtain your consent if required by law. </p>
+                    </div>
+
+                    <div class="mission2-section">
+
+                      <h3><i class="fa fa-check-circle " aria-hidden="true" style="color:#FEA116;"></i>  Contact Us
+                      </h3>
+                      <p><i class="icofont-tick-mark topic-icon" style='color:#FEA116;'></i>  If you have any questions or concerns about this Privacy Policy or our practices, please contact us at  contact@massarahouse.com or  +966 13 865 0011 </p>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+              <hr style="background-color:blue;">
+
+              <br>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer start -->
+  
+
+  <footer class="ftco-footer ftco-section img" style="background-image: url({% static 'images/bg_4.jpg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <img src="{% static '/images/massara logo.png' %}" style="width:100px">
+            <h2 class="ftco-heading-2">Massara House</h2>
+            <p>Massara House is very eye-soothing and privately owned by International standard Suites hotel with a room accommodation of 300 suites.</p>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4 ml-md-5">
+            <h2 class="ftco-heading-2">Useful Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="/blog" class="py-2 d-block">Blog</a></li>
+              <li><a href="/rooms" class="py-2 d-block">Rooms</a></li>
+              <li><a href="/restaurant" class="py-2 d-block">Restaurant</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+           <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Privacy</h2>
+            <ul class="list-unstyled">
+            
+              <li><a href="/about" class="py-2 d-block">About Us</a></li>
+              <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon icon-map-marker"></span><span class="text">كورنيش، Prince Majed St, Aldugheither Village, Al Khobar 31952, Saudi Arabia</span></li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+96 6138650022</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">business@massarahouse.info</span></a></li>
+                <li><span></span><span class="text">For Booking:</span></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">reservation@massarahouse.info</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+  
+          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed <i class=" color-danger" aria-hidden="true"></i> By <a href="https://Dbotdigital.com" target="_blank">Dbotdigital</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+    <script src="{% static 'js/range.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
+</body>
+
+</html>

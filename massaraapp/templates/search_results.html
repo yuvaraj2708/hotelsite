@@ -1,0 +1,48 @@
+<!-- templates/search_results.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="ftco-section ftco-no-pb ftco-room">
+  <div class="container-fluid px-0">
+  {% if available_rooms %}
+      {% for room in available_rooms %}
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <div class="room-wrap d-md-flex ftco-animate">
+            <a href="#" class="img" style="background-image: url({{ room.image.url }});"></a>
+            <div class="half left-arrow d-flex align-items-center">
+              <div class="text p-4 text-center">
+                <h3 class="mb-3"><a href="rooms.html">{{ room.room_type }}</a></h3>
+                <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                <p class="mb-0"><span class="price mr-1"> SAR {{ room.normal_price }}<span class="per"> Normal Price</span></p>
+                  <p class="mb-0"><span class="price mr-1">SAR {{ room.season_price }}<span class="per"> Season Price</span></p>
+         {% if room.id and user.is_authenticated and user.user_type == 'customer' %}
+              <a href="{% url 'book_room' room.id %}" class="btn-custom px-3 py-2 rounded">Book Now</a>
+              <br><h3 class="mb-3"><a href="{% url 'search' %}">Back to Search</a></h3>
+            {% elif not user.is_authenticated %}
+            </div>
+            <p>
+              Please
+              <a href="{% url 'customer_login' %}">log in</a>
+              or
+              <a href="{% url 'customer_registration' %}">register</a>
+              to book this room.
+            </p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No available rooms for the selected criteria.</p>
+  {% endif %}
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}
+
+         

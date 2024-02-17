@@ -1,0 +1,46 @@
+{% extends 'staffbase.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header bg-primary text-white text-center">
+            <h2>Register Room</h2>
+          </div>
+          <div class="card-body">
+            <form method="post" action="{% url 'register_room' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="{{ form.room_type.id_for_label }}" class="font-weight-bold">Room Type:</label>
+                {{ form.room_type }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.normal_price.id_for_label }}" class="font-weight-bold">Normal Price:</label>
+                {{ form.normal_price }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.season_price.id_for_label }}" class="font-weight-bold">Season Price:</label>
+                {{ form.season_price }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.available_count.id_for_label }}" class="font-weight-bold">Available Count:</label>
+                {{ form.available_count }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.image.id_for_label }}" class="font-weight-bold">Image:</label>
+                {{ form.image }}
+              </div>
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Register Room</button>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer text-center">
+            <a href="{% url 'staff_dashboard' %}" class="btn btn-secondary">Back to Staff Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

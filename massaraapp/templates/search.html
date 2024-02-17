@@ -1,0 +1,753 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Massara</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+ 
+	<link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.css'%}">
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+	<link rel="stylesheet" href="{% static 'css/aos.css'%}">
+	<link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css'%}">
+	<link rel="stylesheet" href="{% static 'css/jquery.timepicker.css'%}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+	<link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+     <body>
+
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+          <img  src="{% static 'images/favicon.png'%}"style="width:120px">
+          
+          <a class="navbar-brand" href="#"><span style="color:black">Massara</span><span style="color:#FEA116">House</span>
+      </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+          </button>
+    
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item "><a href="/" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="/rooms" class="nav-link">ROOMS</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICES</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <!-- Dropdown items -->
+              <a class="dropdown-item" href="/cafe">Cafe</a>
+              <a class="dropdown-item" href="/restaurant">Restaurants</a>
+              <a class="dropdown-item" href="/gym">Fitness Center</a>
+              <a class="dropdown-item" href="/swimming">Swimming Pools</a>
+            </div>
+          </li>
+           
+            <li class="nav-item"><a href="/blog" class="nav-link">BLOG</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">CONTACT</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">ABOUT</a></li>
+            <li class="nav-item"><a href="/legal" class="nav-link">LEGAL</a></li>
+        
+          {% if user.is_authenticated %}
+          <!-- User is logged in, show logout button -->
+          <li class="nav-item"><a href="{% url 'customer_logout' %}" class="nav-link">LOGOUT</a></li>
+          {% else %}
+          <!-- User is not logged in, show login and register buttons -->
+          <li class="nav-item"><a href="{% url 'customer_login' %}" class="nav-link">LOGIN</a></li>
+          <li class="nav-item"><a href="{% url 'customer_registration' %}" class="nav-link">REGISTER</a></li>
+          {% endif %}
+          </ul>
+        </div>
+        
+        </div>
+        </nav>
+    <!-- END nav -->
+		<div class="hero">
+	    <section class="home-slider owl-carousel">
+			
+			<div class="slider-item" style="background-image: url({% static 'images/headermassara.png' %})">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-start">
+	          <div class="col-md-6 ftco-animate">
+	          	<div class="text">
+	          		<h2 style="color:black">More than a hotel... an experience</h2>
+		            <h1 class="mb-3"><span style="color:black">Hotel</span> for the whole family,<span style="color:black">all year</span><br> round.</h1>
+	            </div>
+	          </div>
+	        </div>
+	        </div>
+	      </div>
+        <div class="slider-item" style="background-image: url({% static 'images/header2.jpg' %})">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-start">
+	          <div class="col-md-6 ftco-animate">
+	          	<div class="text">
+                <h2 style="color:black">Massara Hotel &amp; Resort</h2>
+		            <h1 class="mb-3">It <span style="color:black">feels</span> like staying<span style="color:black"> in</span> your own<span style="color:black"> home.</span></h1>
+	            </div>
+	          </div>
+	        </div>
+	        </div>
+	      </div>
+        <div class="slider-item" style="background-image: url({% static 'images/header3.jpg' %})">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-start">
+	          <div class="col-md-6 ftco-animate">
+	          	<div class="text">
+	          		<h2 style="color:black">More than a hotel... an experience</h2>
+		            <h1 class="mb-3"><span style="color:black">Hotel</span> for the whole family,<span style="color:black">all year</span><br> round.</h1>
+	            </div>
+	          </div>
+	        </div>
+	        </div>
+	      </div>
+		  <div class="slider-item" style="background-image: url({% static 'images/header4.jpg' %})">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-start">
+	          <div class="col-md-6 ftco-animate">
+	          	<div class="text">
+	          		<h2 style="color:black">Massara Hotel &amp; Resort</h2>
+		            <h1 class="mb-3">It <span style="color:black">feels</span> like staying<span style="color:black"> in</span> your own<span style="color:black"> home.</span></h1>
+	            </div>
+	          </div>
+	        </div>
+	        </div>
+	      </div>
+	    </section>
+	  </div>
+    <form method="get" class="booking-form aside-stretch" action="{% url 'search_results' %}">
+      <section class="ftco-booking ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-md d-flex py-md-4">
+                    <div class="form-group align-self-stretch d-flex align-items-end">
+                      <div class="wrap align-self-stretch py-3 px-4">
+                        <label for="check-in">Check In:</label>
+                        <input type="date" name="check-in" class="form-control" placeholder="Check-in date" required
+                               min="{% now 'Y-m-d' %}">
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-md d-flex py-md-4">
+                    <div class="form-group align-self-stretch d-flex align-items-end">
+                      <div class="wrap align-self-stretch py-3 px-4">
+                        <label for="check-out">Check Out:</label>
+                        <input type="date" name="check-out" class="form-control" placeholder="Check-out date" required min="{% now 'Y-m-d' %}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md d-flex py-md-4">
+                    <div class="form-group align-self-stretch d-flex align-items-end">
+                      <div class="wrap align-self-stretch py-3 px-4">
+                        <label for="room-type">Room Type:</label>
+                        <div class="form-field">
+                          <div class="select-wrap">
+                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                            <select name="room-type" id="" class="form-control">
+                              <option value="Studio">Studio</option>
+                              <option value="Deluxe">Deluxe</option>
+                              <option value="1BHK">1BHK</option>
+                              <option value="2BHK">2BHK</option>
+                              <option value="3BHK">3BHK</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="col-md d-flex">
+                              <div class="form-group d-flex align-self-stretch">
+                  <button type="submit" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block">
+                    <span>Check Availability <small>Best Price Guaranteed!</small></span>
+                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </form>
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <span class="subheading">Welcome to Massara Hotel</span>
+          <h2 class="mb-4">You'll Never Want To Leave</h2>
+        </div>
+      </div>  
+      <div class="row d-flex">
+        <div class="col-md pr-md-1 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services py-4 d-block text-center">
+            <div class="d-flex justify-content-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-reception-bell"></span>
+              </div>
+            </div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Friendly Service</h3>
+            </div>
+          </div>      
+        </div>
+        <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services active py-4 d-block text-center">
+            <div class="d-flex justify-content-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-serving-dish"></span>
+              </div>
+            </div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Get Breakfast</h3>
+            </div>
+          </div>    
+        </div>
+        <div class="col-md px-md-1 d-flex align-sel Searchf-stretch ftco-animate">
+          <div class="media block-6 services py-4 d-block text-center">
+            <div class="d-flex justify-content-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-car"></span>
+              </div>
+            </div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Transfer Services</h3>
+            </div>
+          </div>      
+        </div>
+        <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services py-4 d-block text-center">
+            <div class="d-flex justify-content-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-spa"></span>
+              </div>
+            </div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Suits &amp; SPA</h3>
+            </div>
+          </div>      
+        </div>
+        <div class="col-md pl-md-1 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services py-4 d-block text-center">
+            <div class="d-flex justify-content-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="ion-ios-bed"></span>
+              </div>
+            </div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Cozy Rooms</h3>
+            </div>
+          </div>      
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="ftco-section ftco-wrap-about ftco-no-pt ftco-no-pb">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-md-7 order-md-last d-flex">
+          
+          <div class="img img-1 mr-md-2 ftco-animate" style="background-image: url({% static 'images/20220212-_MG_2815.jpg' %})"></div>
+            
+      <div class="img img-2 ml-md-2 ftco-animate" style="background-image: url({% static 'images/20220212-_MG_2828.jpg' %})"></div>
+        
+        </div>
+        <div class="col-md-5 wrap-about pb-md-3 ftco-animate pr-md-5 pb-md-5 pt-md-4">
+          <div class="heading-section mb-4 my-5 my-md-0">
+            <span class="subheading">About Massara Hotel</span>
+            <h2 class="mb-4">Massara Hotel the Most Recommended Hotel All Over the World</h2>
+          </div>
+          <p>Massara House offers 300 beautifully designed suites, perfect for relaxation or business. Each suite is crafted with care to ensure your comfort and satisfaction.</p><br>
+            <p>Located in Al Khobar, Saudi Arabia, Massara House exudes luxury and unmatched hospitality. As a privately owned hotel with international standards, it promises a memorable stay for every guest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimony-section">
+    <div class="container">
+      <div class="row no-gutters ftco-animate justify-content-center">
+        <div class="col-md-5 d-flex">
+      
+      <div class="testimony-img aside-stretch-2" style="background-image: url({% static 'images/20220212-_MG_2818.jpg' %})"></div>
+        </div>
+        <div class="col-md-7 py-5 pl-md-5">
+          <div class="py-md-5">
+            <div class="heading-section ftco-animate mb-4">
+              <span class="subheading">Testimony</span>
+              <h2 class="mb-0">Happy Customer</h2>
+            </div>
+            <div class="carousel-testimony owl-carousel ftco-animate">
+              <div class="item">
+                <div class="testimony-wrap pb-4">
+                  <div class="text">
+                    <p class="mb-4">My room was an absolute sanctuary of comfort. The attention to cleanliness and the thoughtful amenities provided truly made it a home away from home. 
+                      The plush bedding, tasteful decor,
+                       and the overall ambiance created a perfect retreat after a day of exploring.</p>
+                  </div>
+                  <div class="d-flex">
+          <div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})"></div>
+                  
+                    <div class="pos ml-3">
+                      <p class="name">Larry</p>
+                      <span class="position">Businessman</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap pb-4">
+                  <div class="text">
+                    <p class="mb-4">Dining at MassaraHouse was a culinary journey I won't soon forget. 
+                      The restaurant's menu offered a delightful variety, and each dish was a masterpiece. The chef's creativity and the use of fresh, 
+                      high-quality ingredients were evident in every bite. A gastronomic delight, indeed!</p>
+                  </div>
+                  <div class="d-flex">
+            <div class="user-img" style="background-image: url({% static 'images/person_2.jpg' %})">
+
+                    </div>
+                    <div class="pos ml-3">
+                      <p class="name">Gerald</p>
+                      <span class="position">Businessman</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap pb-4">
+                  <div class="text">
+                    <p class="mb-4">The outside look area of the hotel is a hidden gem. The well-maintained gardens, cozy seating areas, and the overall scenic beauty added a touch of serenity to my stay. Whether enjoying a morning coffee or an evening stroll, the outdoor spaces provided a perfect retreat.</p>
+                  </div>
+                  <div class="d-flex">
+            <div class="user-img" style="background-image: url({% static 'images/person_3.jpg' %})"> 
+                    </div>
+                    <div class="pos ml-3">
+                      <p class="name">Hodson</p>
+                      <span class="position">Businessman</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-no-pb ftco-room">
+    <div class="container-fluid px-0">
+      <div class="row no-gutters justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <span class="subheading">Massara Lights Rooms</span>
+          <h2 class="mb-4">Hotel Master's Rooms</h2>
+        </div>
+      </div>  
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <div class="room-wrap d-md-flex ftco-animate">
+          <a class="img" style="background-image: url({% static 'images/studio.jpg' %})"></a>
+            
+            <div class="half left-arrow d-flex align-items-center">
+              <div class="text p-4 text-center">
+                <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 180.00</span> <span class="per">Standard rate</span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 250.00</span> <span class="per">Season rate</span></p>
+                <h3 class="mb-3"><a href="rooms.html">Studio</a></h3>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="room-wrap d-md-flex ftco-animate">
+          <a class="img" style="background-image: url({% static 'images/20220125-IMG_8084.jpg' %})"></a>
+            <div class="half left-arrow d-flex align-items-center">
+              <div class="text p-4 text-center">
+                <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 200.00</span> <span class="per">Standard rate</span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 350.00</span> <span class="per">Season rate
+                </span></p>
+                <h3 class="mb-3"><a href="rooms.html">Deluxe studio</a></h3>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="room-wrap d-md-flex ftco-animate">
+          <a class="img order-md-last" style="background-image: url({% static 'images/1bhk.jpg' %})"></a>
+            <div class="half right-arrow d-flex align-items-center">
+              <div class="text p-4 text-center">
+                <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 280.00</span> <span class="per">Standard rate</span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 450.00</span> <span class="per">Season rate</span></p>
+                <h3 class="mb-3"><a href="rooms.html">1BHK standard suite</a></h3>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="room-wrap d-md-flex ftco-animate">
+          <a class="img order-md-last" style="background-image: url({% static 'images/20220125-IMG_8019.jpg' %})"></a>
+                       <div class="half right-arrow d-flex align-items-center">
+              <div class="text p-4 text-center">
+                <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 380.00</span> <span class="per">Standard rate</span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 600.00</span> <span class="per">Season rate</span></p>
+                <h3 class="mb-3"><a href="rooms.html">2BHK standard suite</a></h3>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="room-wrap d-md-flex ftco-animate">
+            <a class="img" style="background-image: url({% static 'images/20220212-_MG_2917.jpg' %})"></a>
+
+            <div class="half left-arrow d-flex align-items-center">
+              <div class="text p-4 text-center">
+                <p class="mb-0"><span class="price mr-1">SAR 480.00</span> <span class="per">Standard rate</span></p>
+                <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                <p class="mb-0"><span class="price mr-1">SAR 700.00</span> <span class="per">Season rate</span></p>
+                <h3 class="mb-3"><a href="rooms.html">3BHK standard suite</a></h3>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="ftco-section ftco-menu bg-light">
+    <div class="container-fluid px-md-4">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <span class="subheading">Restaurant</span>
+          <h2>Restaurant</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-xl-4 d-flex">
+          <div class="pricing-entry rounded d-flex ftco-animate">
+        <div class="img" style="background-image: url({% static 'images/foods/chickenbacon cheese.jpg' %}">
+      </div>
+            <div class="desc p-4">
+              <div class="d-md-flex text align-items-start">
+                <h3><span>CORDON BLEU</span></h3>
+                <span class="price">SAR 195/260</span>
+              </div>
+              <div class="d-block">
+                <p>Chicken,bacon and chesse.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 d-flex">
+          <div class="pricing-entry rounded d-flex ftco-animate">
+        <div class="img" style="background-image: url({% static 'images/foods/chicken vegetable and pepper sause.jpg' %}"></div>
+            <div class="desc p-4">
+              <div class="d-md-flex text align-items-start">
+                <h3><span>CHICKEN ALA CREME</span></h3>
+                <span class="price">SAR 175/280</span>
+              </div>
+              <div class="d-block">
+                <p>Chicken, vegetables and pepper sause</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 d-flex">
+          <div class="pricing-entry rounded d-flex ftco-animate">
+            
+        <div class="img" style="background-image: url({% static 'images/foods/chicken bacon cheeseseasoning potatos.jpg' %}"></div>
+
+            <div class="desc p-4">
+              <div class="d-md-flex text align-items-start">
+                <h3><span>FRIED CHICKEN</span></h3>
+                <span class="price">SAR 68/130</span>
+              </div>
+              <div class="d-block">
+                <p>Chicken,seasoning and potatoes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 d-flex">
+          <div class="pricing-entry rounded d-flex ftco-animate">
+        <div class="img" style="background-image: url({% static 'images/foods/CHICKEN PEPPERS.jpg' %}">
+                </div>
+            <div class="desc p-4">
+              <div class="d-md-flex text align-items-start">
+                <h3><span>CHICKEN PEPPERS</span></h3>
+                <span class="price">SAR 180/290</span>
+              </div>
+              <div class="d-block">
+                <p>Chicken, vegetables and pepper sause</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 d-flex">
+          <div class="pricing-entry rounded d-flex ftco-animate">
+        <div class="img" style="background-image: url({% static 'images/foods/beefbroccoli.jpg' %}">
+                  </div>
+            <div class="desc p-4">
+              <div class="d-md-flex text align-items-start">
+                <h3><span>BEEF BRCCOLI</span></h3>
+                <span class="price">SAR 195/360</span>
+              </div>
+              <div class="d-block">
+                <p>Beef,broccoli and oyster sause</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 d-flex">
+          <div class="pricing-entry rounded d-flex ftco-animate">
+        <div class="img" style="background-image: url({% static 'images/foods/bakedsalmon.jpg' %}">
+                </div>
+            <div class="desc p-4">
+              <div class="d-md-flex text align-items-start">
+                <h3><span>BAKED SALMON WHOLE</span></h3>
+                <span class="price">SAR 350/560</span>
+              </div>
+              <div class="d-block">
+                <p>Marinated salmon and vegetables.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 text-center ftco-animate">
+          <p><a href="/restaurant" class="btn btn-primary rounded">View All Menu</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <span class="subheading">Visit Places</span>
+          <h2>Tourist Places</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 ftco-animate">
+          <div id="placesCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="background-image: url({% static 'images/place1.jpg' %})">
+                <div class="carousel-caption">
+                  <h3 style="color:white;">The Corniche – The Heart of Khobar City</h3>
+                </div>
+              </div>
+              <div class="carousel-item" style="background-image: url({% static 'images/place2.jpg' %})">
+                <div class="carousel-caption">
+                  <h3 style="color:white;">Khobar Water Tower – An Iconic Khobar Landmark</h3>
+                </div>
+              </div>
+              <div class="carousel-item" style="background-image: url({% static 'images/place3.jpg' %})">
+                <div class="carousel-caption">
+                  <h3 style="color:white;">Al Khobar: A Unique Blend of Natural Beauty, Cultural Heritage, and Modern Amenities</h3>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#placesCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#placesCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    /* Additional Styles (customize as needed) */
+    .carousel-inner {
+      height: 400px; /* Adjust the height as needed */
+    }
+
+    .carousel-item {
+      background-size;
+      background-position: center;
+      height: 100%;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for caption */
+      color: #fff;
+    }
+  </style>
+
+  <section class="instagram">
+    <div class="container-fluid">
+      <div class="row no-gutters justify-content-center pb-5">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <span class="subheading">Photos</span>
+          <h2><span>Instagram</span></h2>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-sm-12 col-md ftco-animate">
+    <a class="insta-img image-popup" style="background-image: url({% static 'images/20220125-IMG_8030.jpg' %})">
+            <div class="icon d-flex justify-content-center">
+              <span class="icon-instagram align-self-center"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-12 col-md ftco-animate">
+    <a class="insta-img image-popup" style="background-image: url({% static 'images/20220125-IMG_8114.jpg' %})">
+           <div class="icon d-flex justify-content-center">
+              <span class="icon-instagram align-self-center"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-12 col-md ftco-animate">
+    <a class="insta-img image-popup" href="images/20220212-_MG_2840.jpg" style="background-image: url({% static 'images/20220212-_MG_2840.jpg' %})">
+           <div class="icon d-flex justify-content-center">
+              <span class="icon-instagram align-self-center"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-12 col-md ftco-animate">
+    <a class="insta-img image-popup" href="images/20220212-_MG_2840.jpg" style="background-image: url({% static 'images/gym4.jpg' %})">
+            <div class="icon d-flex justify-content-center">
+              <span class="icon-instagram align-self-center"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-12 col-md ftco-animate">
+    <a class="insta-img image-popup" href="images/20220125-IMG_8180.jpg" style="background-image: url({% static 'images/20220125-IMG_8180.jpg' %})">
+            <div class="icon d-flex justify-content-center">
+              <span class="icon-instagram align-self-center"></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <footer class="ftco-footer ftco-section img" style="background-image: url({% static 'images/bg_4.jpg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <img src="{% static '/images/massara logo.png' %}" style="width:100px">
+            <h2 class="ftco-heading-2">Massara House</h2>
+            <p>Massara House is very eye-soothing and privately owned by International standard Suites hotel with a room accommodation of 300 suites.</p>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4 ml-md-5">
+            <h2 class="ftco-heading-2">Useful Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="/blog" class="py-2 d-block">Blog</a></li>
+              <li><a href="/rooms" class="py-2 d-block">Rooms</a></li>
+              <li><a href="/restaurant" class="py-2 d-block">Restaurant</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+           <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Privacy</h2>
+            <ul class="list-unstyled">
+            
+              <li><a href="/about" class="py-2 d-block">About Us</a></li>
+              <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon icon-map-marker"></span><span class="text">كورنيش، Prince Majed St, Aldugheither Village, Al Khobar 31952, Saudi Arabia</span></li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+96 6138650022</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">business@massarahouse.info</span></a></li>
+                <li><span></span><span class="text">For Booking:</span></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">reservation@massarahouse.info</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+  
+          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed <i class=" color-danger" aria-hidden="true"></i> By <a href="https://Dbotdigital.com" target="_blank">Dbotdigital</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+   <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+  <script src="{% static 'js/range.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
+    
+</body>
+</html>
+
+
+
+
+

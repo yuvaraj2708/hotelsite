@@ -1,0 +1,273 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Massarahouse</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+   
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.css'%}">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+<link rel="stylesheet" href="{% static 'css/aos.css'%}">
+<link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css'%}">
+<link rel="stylesheet" href="{% static 'css/jquery.timepicker.css'%}">
+<link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+          <img  src="{% static 'images/favicon.png'%}"style="width:100px">
+          
+          <a class="navbar-brand" style="color:black">Massara<span style="color:#FEA116">House</span>
+      </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+          </button>
+    
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item "><a href="/" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="/rooms" class="nav-link">ROOMS</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICES</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <!-- Dropdown items -->
+              <a class="dropdown-item" href="/cafe">Cafe</a>
+              <a class="dropdown-item" href="/restaurant">Restaurants</a>
+              <a class="dropdown-item" href="/gym">Fitness Center</a>
+              <a class="dropdown-item" href="/swimming">Swimming Pools</a>
+            </div>
+          </li>
+           
+            <li class="nav-item"><a href="/blog" class="nav-link">BLOG</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">CONTACT</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">ABOUT</a></li>
+            <li class="nav-item"><a href="/legal" class="nav-link">LEGAL</a></li>
+        
+          {% if user.is_authenticated %}
+          <!-- User is logged in, show logout button -->
+          <li class="nav-item"><a href="{% url 'customer_logout' %}" class="nav-link">LOGOUT</a></li>
+          {% else %}
+          <!-- User is not logged in, show login and register buttons -->
+          <li class="nav-item"><a href="{% url 'customer_login' %}" class="nav-link">LOGIN</a></li>
+          <li class="nav-item"><a href="{% url 'customer_registration' %}" class="nav-link">REGISTER</a></li>
+          {% endif %}
+          </ul>
+        </div>
+        
+        </div>
+        </nav>
+    <!-- END nav -->
+		<div class="hero-wrap" style="background-image: url({% static 'images/bg_3.jpg' %});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
+          	<div class="text">
+	            <p class="breadcrumbs mb-2" style="padding-left:850px"><span style="color:black;">Home</a></span> <span  style="color:black;">Swimming</span></p>
+	            <h1 class="mb-4 bread" style="color:black; padding-left:850px;padding-bottom:200px">Swimming</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url({% static  'images/bg_2.jpg'%});">
+              </a>
+              <div class="text mt-3">
+              
+                <h3 class="heading"><a href="#">Serenity and Style: </a></h3>
+                <p>Indulge in a tranquil oasis where serenity meets style at our hotel's swimming pool. Immerse yourself in an ambiance of luxury, surrounded by sleek design elements that elevate your poolside experience to new heights of sophistication. </p>
+               
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url({% static 'images/image_2.jpg' %});">
+              </a>
+              <div class="text mt-3">
+              
+                <h3 class="heading"><a href="#">Impeccable Cleanliness:</a></h3>
+                <p>Our commitment to impeccable cleanliness ensures a refreshing and hygienic environment for your poolside retreat. Dive into crystal-clear waters knowing that every inch of our swimming pool is meticulously maintained, allowing you to unwind with peace of mind.</p>
+               
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url({% static '/images/20220125-IMG_8180.jpg' %})">
+              </a>
+              <div class="text mt-3">
+              	
+                <h3 class="heading"><a href="#">Poolside Bliss: </a></h3>
+                <p>Escape to a haven of tranquility by our exquisite swimming pool. Immerse yourself in pure bliss as you lounge beside the shimmering waters, surrounded by lush landscapes and a serene ambiance, creating the perfect setting for relaxation and rejuvenation.</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url({% static  '/images/20220125-IMG_8186.jpg' %})">
+              </a> 
+              <div class="text mt-3">
+              
+                <h3 class="heading"><a href="#">Inclusive Design:  </a></h3>
+                <p>Whether you seek invigorating laps or simply wish to relax by the water's edge, our inclusive facilities cater to every guest, ensuring a blissful and enjoyable time for all.</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url({% static '/images/image_5.jpg'%})">
+              </a>
+              <div class="text mt-3">
+              	
+                <h3 class="heading"><a href="#">Entertainment Hub: </a></h3>
+                <p>Dive into a world of entertainment at our pool, where the vibrant atmosphere extends beyond the water. Enjoy live music, themed events, and an array of recreational activities, transforming our swimming pool into a lively hub for both relaxation and entertainment.</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url({% static  '/images/insta-3.jpg'%})">
+              </a>
+              <div class="text mt-3">
+              	
+                <h3 class="heading"><a href="#">Exclusive Packages and Offers:</a></h3>
+                <p>Elevate your pool experience with our exclusive packages and offers, curated to enhance your stay. From romantic sunset poolside dinners to rejuvenating spa treatments, our tailored packages provide an unparalleled blend of luxury and savings for a truly indulgent escape.</p>
+                
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+ 
+
+    <footer class="ftco-footer ftco-section img" style="background-image: url({% static 'images/bg_4.jpg' %})">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <img src="{% static '/images/massara logo.png' %}" style="width:100px">
+              <h2 class="ftco-heading-2">Massara House</h2>
+              <p>Massara House is very eye-soothing and privately owned by International standard Suites hotel with a room accommodation of 300 suites.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Useful Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="/blog" class="py-2 d-block">Blog</a></li>
+                <li><a href="/rooms" class="py-2 d-block">Rooms</a></li>
+                <li><a href="/restaurant" class="py-2 d-block">Restaurant</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Privacy</h2>
+              <ul class="list-unstyled">
+              
+                <li><a href="/about" class="py-2 d-block">About Us</a></li>
+                <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">كورنيش، Prince Majed St, Aldugheither Village, Al Khobar 31952, Saudi Arabia</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+96 6138650022</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">business@massarahouse.info</span></a></li>
+                  <li><span></span><span class="text">For Booking:</span></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">reservation@massarahouse.info</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+    
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed <i class=" color-danger" aria-hidden="true"></i> By <a href="https://Dbotdigital.com" target="_blank">Dbotdigital</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+  <script src="{% static 'js/range.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    
+  </body>
+</html>

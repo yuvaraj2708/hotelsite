@@ -1,0 +1,81 @@
+<!-- templates/customer_booking.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  .card-hover:hover {
+    background-color: #FEA116;
+    transition: background-color 0.3s;
+  }
+
+  .card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .text-success {
+    color: #28a745;
+  }
+
+  .text-danger {
+    color: #dc3545;
+  }
+
+  .text-warning {
+    color: #ffc107;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+</style>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Your User Details</h2>
+          <p class="lead"><strong>Username:</strong> {{ user_details.username }}</p>
+          <p class="lead"><strong>Phone Number:</strong> {{ user_details.phone_number }}</p>
+          <p class="lead"><strong>Email ID:</strong> {{ user_details.email }}</p>
+          <!-- Add more user details as needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-5 mb-4">Your Bookings</h2>
+  <div class="row">
+    {% for booking in bookings %}
+      <div class="col-md-4">
+        <div class="card card-hover">
+          <div class="card-body">
+            <h5 class="card-title">{{ booking.room.room_type }}</h5>
+            <p class="card-text"><strong>Check-in:</strong> {{ booking.check_in_date }}</p>
+            <p class="card-text"><strong>Check-out:</strong> {{ booking.check_out_date }}</p>
+            {% if booking.is_checked_out %}
+              <p class="card-text text-success"><strong>Status:</strong> Checked Out</p>
+            {% elif booking.is_canceled %}
+              <p class="card-text text-danger"><strong>Status:</strong> Canceled</p>
+            {% else %}
+              <p class="card-text text-warning"><strong>Status:</strong> Not Checked Out</p>
+              <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger">Cancel Booking</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

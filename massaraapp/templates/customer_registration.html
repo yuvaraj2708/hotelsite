@@ -1,0 +1,82 @@
+<!-- templates/customer_registration.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Customer Registration</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.username.label_tag }}
+                            {% with form.username as field %}
+                                <input type="{{ field.field.widget.input_type }}"
+                                       name="{{ field.name }}"
+                                       class="form-control"
+                                       id="{{ field.id_for_label }}"
+                                       value="{{ field.value }}"
+                                       {% if field.field.required %}required{% endif %}>
+                            {% endwith %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.phone_number.label_tag }}
+                            {% with form.phone_number as field %}
+                                <input type="{{ field.field.widget.input_type }}"
+                                       name="{{ field.name }}"
+                                       class="form-control"
+                                       id="{{ field.id_for_label }}"
+                                       value="{{ field.value }}"
+                                       {% if field.field.required %}required{% endif %}>
+                            {% endwith %}
+                        </div>
+                         <div class="form-group">
+                            {{ form.email.label_tag }}
+                            {% with form.email as field %}
+                                <input type="{{ field.field.widget.input_type }}"
+                                       name="{{ field.name }}"
+                                       class="form-control"
+                                       id="{{ field.id_for_label }}"
+                                       value="{{ field.value }}"
+                                       {% if field.field.required %}required{% endif %}>
+                            {% endwith %}
+                        </div> 
+                        <div class="form-group">
+                            {{ form.password1.label_tag }}
+                            {% with form.password1 as field %}
+                                <input type="{{ field.field.widget.input_type }}"
+                                       name="{{ field.name }}"
+                                       class="form-control"
+                                       id="{{ field.id_for_label }}"
+                                       {% if field.field.required %}required{% endif %}>
+                            {% endwith %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password2.label_tag }}
+                            {% with form.password2 as field %}
+                                <input type="{{ field.field.widget.input_type }}"
+                                       name="{{ field.name }}"
+                                       class="form-control"
+                                       id="{{ field.id_for_label }}"
+                                       {% if field.field.required %}required{% endif %}>
+                            {% endwith %}
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% comment %} <!-- templates/customer_registration.html -->
+
+<h2>Customer Registration</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form> {% endcomment %}

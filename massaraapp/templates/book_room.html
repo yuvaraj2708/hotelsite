@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Book Room - {{ room.room_type }}</h2>
+        <form method="post">
+          {% csrf_token %}
+          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="{{ form.check_in_date.id_for_label }}">Check In:</label>
+              {{ form.check_in_date }}
+            </div>
+            
+            <div class="form-group col-md-6">
+              <label for="{{ form.check_out_date.id_for_label }}">Check Out:</label>
+              {{ form.check_out_date }}
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              <span>Book Now</span>
+            </button>
+          </div>
+        </form>
+
+        <a href="{% url 'home' %}" class="btn btn-secondary btn-block mt-3">Back to Home</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

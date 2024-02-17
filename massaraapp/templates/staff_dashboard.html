@@ -1,0 +1,58 @@
+{% extends 'staffbase.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2 class="mb-4">Staff Dashboard</h2>
+
+    <!-- Room Registration Form -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3 class="card-title">Register Room</h3>
+        <form method="post" action="{% url 'register_room' %}">
+          {% csrf_token %}
+          {{ room_registration_form.as_p }}
+          <button type="submit" class="btn btn-primary">Register Room</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Room Status Overview -->
+{% comment %} <div class="card mb-4">
+  <div class="card-body">
+    <h3 class="card-title">Room Status Overview</h3>
+    <p>Total Rooms: {{ total_rooms }}</p>
+    <p>Available Rooms: {{ available_rooms }}</p>
+    <p>Not Available Rooms: {{ not_available_rooms }}</p>
+  </div>
+</div> {% endcomment %}
+
+<!-- Booked Rooms -->
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Booked Rooms</h3>
+    <div class="list-group">
+      {% for booking in bookings %}
+        <div class="list-group-item list-group-item-action mb-3 position-relative">
+          <h5 class="mb-2">{{ booking.customer.username }} - {{ booking.room }}
+            <br>Emailid: {{ booking.customer.email }} - phonenumber: {{ booking.customer.phone_number }}
+           
+          </h5>
+          <p class="mb-2">Check-in: {{ booking.check_in_date }} | Check-out: {{ booking.check_out_date }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            {% if booking.is_canceled %}
+              <span class="badge badge-danger">Canceled</span>
+            {% elif booking.is_checked_out %}
+              <span class="badge badge-success">Checked Out</span>
+            {% else %}
+              <span class="badge badge-warning">Not Checked Out</span>
+              <a href="{% url 'release_room' booking.id %}" class="btn btn-danger">Release Room</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+  </div>
+{% endblock %}
